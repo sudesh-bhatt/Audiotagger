@@ -17,7 +17,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   final filePath = "/sdcard/test.mp3";
   final artwork = "/sdcard/cover.jpg";
-  Widget result;
+  Widget? result;
   Audiotagger tagger = new Audiotagger();
 
   @override
@@ -90,7 +90,7 @@ class _MyAppState extends State<MyApp> {
         body: Center(
           child: Column(
             children: <Widget>[
-              result != null ? result : Text("Ready.."),
+              result != null ? result! : Text("Ready.."),
               ElevatedButton(
                 child: Text("Read tags"),
                 onPressed: () async {
